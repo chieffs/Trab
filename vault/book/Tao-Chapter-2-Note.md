@@ -88,6 +88,20 @@ $$
 $$
 thus we have closed the induction loop and proved that $n+(m++)=(n+m)++$
 
+### Proposition 2.2.4
+This is the proof that addition is commutative.
+For any natural numbers $m,n$ we have $n+m=m+n$
+#### Proof
+We shall use induction on $n$.
+For $n=0$ we have, $0+m=m$ and $m+0=m$ by [[#Lemma 2.2.2]].
+Lets assume inductively that this is true for $n$,
+so $n+m=m+n$ for $n$.
+Now we must prove that $(n++)+m = m + (n++)$.
+We know by the [[#Addition|definition of addition]] that $(n++)+m=(n+m)++$. We also have, by [[#Lemma 2.2.3]] that $m + (n++)=(n+m)++$. Thus we have reached
+$$
+(n++)+m = (n+m)++ = m + (n++)
+$$
+and concluded the induction loop
 
 
 ## Proof ideas (informal)
