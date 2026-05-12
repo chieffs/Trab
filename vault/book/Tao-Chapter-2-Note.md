@@ -23,11 +23,21 @@ if n is a natural number, then n++ is also a natural number
 
 ### 2.3
 0 is note the successor of any natural number; *i.e*, 
-
+$$
+\forall n \in \mathbb{N},\, n++ \neq 0
+$$
+### 2.4
 
 ## Key definitions
 ### Increment operator (++)
-We define the 
+We define the increment operator ++ as such, assuming that 0 exists, as in axiom [[#2.1]]
+$0++$ is the successor of 0 and $(0++)++$ is the successor of $0++$, so on and so forth, for every natural $n, \, n++$ is the successor of $n$
+
+### Natural numbers
+The natural numbers are defined as the set
+$$
+\mathbb{N} \coloneqq \{ 0,0++,(0++)++,\dots \}   
+$$
 
 ## Key lemmas / theorems
 
