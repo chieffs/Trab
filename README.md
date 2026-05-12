@@ -2,6 +2,15 @@
 
 Short for **T**ao **R**eal **A**nalysis **B**ook (in **Lean**): a study workspace for Terence Tao’s *Analysis I* (and later *Analysis II*). Use **Obsidian** for chapter notes and intuition, and **Lean 4** with **Mathlib** to formalize definitions, proofs, and exercises.
 
+**Remote:** [github.com/chieffs/Trab](https://github.com/chieffs/Trab)
+
+Clone:
+
+```bash
+git clone https://github.com/chieffs/Trab.git
+cd Trab
+```
+
 ## Prerequisites
 
 - [Elan](https://github.com/leanprover/elan) (Lean toolchain manager) and a working `lake` command.
