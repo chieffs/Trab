@@ -59,7 +59,7 @@ $$
 1+2 = 3
 $$
 
-
+### Positive natural numbers
 ## Key lemmas / theorems
 
 ### Lemma 2.2.2
@@ -142,10 +142,8 @@ and
 $$
 (a++)+c=(a+c)++
 $$
-Lastly, by axiom [[#2.4]] we have that if $n=m$ then $n++=m++$.
-So this concludes
-$(a+b)++=(a)$
-
+Lastly, by axiom [[#2.4]] we have that if $n++=m++$ then $n=m$.
+so we have that if $(a++)+b=(a++)+c$ we have $(a+b)++=(a+c)++$ and this implies that $a+b=a+c$, by our inductive hypothesis this means that $b=c$, and thus closing the loop and proving the cancelation law.
 
 ## Proof ideas (informal)
 
