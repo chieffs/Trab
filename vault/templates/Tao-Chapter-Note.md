@@ -12,6 +12,8 @@ date:
 
 ## Summary (own words)
 
+## Axioms
+
 ## Key definitions
 
 ## Key lemmas / theorems
