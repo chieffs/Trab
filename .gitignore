@@ -1,0 +1,9 @@
+# Lean / Lake
+lean/.lake/
+lean/lake-packages/
+
+# Obsidian (optional: uncomment if you do not want settings in git)
+# vault/.obsidian/
+
+# OS
+.DS_Store
