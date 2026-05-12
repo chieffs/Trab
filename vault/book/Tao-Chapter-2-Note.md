@@ -44,7 +44,7 @@ $$
 \mathbb{N} \coloneqq \{ 0,0++,(0++)++,\dots \}   
 $$
 ### Addition
-This is the definition of addition to the natural numbers.
+This is the definition of addition in the natural numbers.
 Ler $m$ be a natural number. To add 0 to $m$, we define $0+m \coloneqq m$. Now suppose inductively that we have defined how to add $n$ to $m$. Then we can add $n++$ to $m$ by defining
 $$
 (n++) + m \coloneqq (n+m)++
