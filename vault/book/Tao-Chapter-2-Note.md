@@ -62,6 +62,20 @@ $$
 
 ## Key lemmas / theorems
 
+### Lemma 2.2.2
+For any natural number $n,n+0=n$.
+We cannot deduce this by the definition immediately, as we have not proved the commutative property of the addition.
+
+#### Proof
+Using induction, the base case $0+0=0$ is trivial as, $0+m =m$ for any natural number $m$, in this case $m=0$.
+Then, lets assume inductively that $n+0=n$, then
+$$
+(n++) + 0 = (n+0)++=(n)++ = n++
+$$
+thus we have closed the induction and proved $0+n=n+0=n$
+
+### Lemma 2.2.3
+For any natural numbers $n,m$, $n+(m++)=(n+m)++$ 
 ## Proof ideas (informal)
 
 ## Exercises checklist
