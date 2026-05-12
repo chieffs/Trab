@@ -45,8 +45,21 @@ $$
 $$
 ### Addition
 This is the definition of addition to the natural numbers.
-Ler $m$ be a natural number. To add 0 to $m$, we define $0+m \coloneqq m$. Now suppose inductively that we have defined how to add $n$ to $m$.
-T
+Ler $m$ be a natural number. To add 0 to $m$, we define $0+m \coloneqq m$. Now suppose inductively that we have defined how to add $n$ to $m$. Then we can add $n++$ to $m$ by defining
+$$
+(n++) + m \coloneqq (n+m)++
+$$
+Thus, $0+m=m$, $1+m=(0++)+m=(0+m)++=m++$.
+We will use the shorthand version of addition, by considering $n++ = n+1$ and $n+m$ as a number itself, for example:
+$$
+1 + 2 = (0++)+((0++)++) = (0++) +(0++))++ =(((0+0)++)++)++=((0++)++)++ = 3
+$$
+for short
+$$
+1+2 = 3
+$$
+
+
 ## Key lemmas / theorems
 
 ## Proof ideas (informal)
