@@ -15,27 +15,27 @@ date: 12/05/2026
 ## Summary (own words)
 Definition of the real numbers base on Peano Axioms and the properties emerging from them
 ## Axioms
-### 1
+### 2.1
 0 is a natural number
 
-### 2
+### 2.2
 if n is a natural number, then n++ is also a natural number
 
-### 3
+### 2.3
 0 is note the successor of any natural number; *i.e*, 
 $$
 \forall n \in \mathbb{N},\, n++ \neq 0
 $$
-### 4
+### 2.4
 Different natural numbers must have different successors;  *i.e*, if $n,m$ are natural numbers and $n\neq m$, then $n++\neq m++$; Equivalently, if $n++=m++$, then, we must have $n=m$
 
-### 5
+### 2.5
 This axiom is called the principle of mathematical induction.
 Let $P(n)$ be any property pertaining to a natural number $n$. Suppose that $P(0)$ is true, and suppose that whenever $P(n)$ is true, $P(n++)$ is also true. Then $P(n)$ is true for every natural number $n.
 
 ## Key definitions
 ### Increment operator (++)
-We define the increment operator ++ as such, assuming that 0 exists, as in axiom [[#2]]
+We define the increment operator ++ as such, assuming that 0 exists, as in axiom [[#2.2]]
 $0++$ is the successor of 0 and $(0++)++$ is the successor of $0++$, so on and so forth, for every natural $n, \, n++$ is the successor of $n$
 
 ### Natural numbers
@@ -89,7 +89,7 @@ $$
 thus we have closed the induction loop and proved that $n+(m++)=(n+m)++$
 
 ### Proposition 2.2.4
-This is the proof that addition is commutative.
+Addition is commutative.
 For any natural numbers $m,n$ we have $n+m=m+n$
 #### Proof
 We shall use induction on $n$.
@@ -104,7 +104,7 @@ $$
 and concluded the induction loop, proving that addition is in fact commutative.
 
 ### Proposition 2.2.5
-This is the proof that addition is associative.
+Addition is associative.
 For any natural numbers $a,b,c$, we have $(a+b)+c = a+(b+c)$
 
 #### Proof
@@ -118,12 +118,34 @@ $$
 ((n++)+b) + c = ((n+b)++) + c = ((n+b)+c)++ = (n+(b+c))++
 $$
 this is true from the [[#Addition]] definition and the inductive hypothesis.
-From the hand side we have
+From the hand side we have, from the definition of addition
 $$
 (n++)+(b+c) = (n+(b+c))++
 $$
-from the definition of addition and the inductive hypothesis as well.
-Thus we have reached at the same term from both sides and proved 
+
+Thus we have reached at the same term from both sides and proved that addition is in fact associative
+
+### Proposition 2.2.6
+Cancelation Law.
+Let $a,b,c$ be natural numbers such that $a+b=a+c$. Then we have $b=c$
+
+#### Proof
+We will prove this by inducting on $a$.
+First consider the base case $0+b=0+c$, this case is trivial as $0+b=b$ and $0+c=c$ then $b=c$.
+Lets assume inductively we have a case $a$ such that $a+b=a+c$ implies $b=c$.
+So we will try to prove that $(a++)+b=(a++)+c \implies b=c$.
+By the definition of [[#Addition]] we have that:
+$$
+(a++)+b=(a+b)++
+$$
+and
+$$
+(a++)+c=(a+c)++
+$$
+Lastly, by axiom [[#2.4]] we have that if $n=m$ then $n++=m++$.
+So this concludes
+$(a+b)++=(a)$
+
 
 ## Proof ideas (informal)
 
