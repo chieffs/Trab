@@ -6,8 +6,9 @@ Short for **T**ao **R**eal **A**nalysis **B**ook (in **Lean**): a study workspac
 
 **Remote:** [github.com/chieffs/Trab](https://github.com/chieffs/Trab)
 
-Who am I and goals for this project:
-I am currently a graduate in applied maths conducting research in epidemiology and causal inference. This project is my way of learning Lean 4 and Real Analysis concurrently. All the Obsidian notes are my notes and paraphrasing from the book *Analysis* by Terence Tao.
+*Who am I and goals for this project:*
+
+I have a degree in applied maths and am currently conducting research in epidemiology and causal inference. This project is my way of learning Lean 4 and Real Analysis concurrently. All the Obsidian notes are my notes and paraphrasing from the book *Analysis* by Terence Tao.
 I use Cursor AI to help maintain the repository and—**only for lemmas and corollaries that the book proves in full (not as exercises)**—sometimes to write the **Lean** formalization. **I write all Lean for exercises myself.** **All** lemma text in my notes (including in Obsidian) and **all LaTeX** are mine; Cursor may assist **only** with that book-proved, non-exercise Lean.
 Also every error in this project is solely my own fault and not the fault of Cursor or Tao's work.
 I hope you have a nice time or learn something from this repository, as I certainly had both a great time and a great deal of learning from this.
