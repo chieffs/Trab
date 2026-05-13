@@ -83,7 +83,6 @@ theorem exercise_2_2_3_antisymmetric {a b : TaoNat} (hab : TaoGe a b) (hba : Tao
 
 
 
-
 /-- (4) Addition preserves (Tao) order on both sides. -/
 theorem exercise_2_2_3_add_preserves {a b c : TaoNat} : TaoGe a b ↔ TaoGe (a + c) (b + c) := by
   sorry
