@@ -195,6 +195,37 @@ Let $a,b,c$ be natural numbers. Then:
 6) $a<b$ if and only if $b=a+d$ for some positive number d
 #### Proof
 This proof is the exercise 2.2.3
+##### Poof 1
+From the definition of greater than we have, for $a,b,c$ in the naturals
+$$
+a \geq b \iff a = b+c
+$$
+using $a\geq a$ we will have
+$$
+a=a+c
+$$
+where $c$ is a unknown natural number. Using $c=0$ completes the proof, as
+$$
+a=a+0=a
+$$
+##### Proof 2
+Lets unfold the definition for the cases
+$$
+\begin{cases}
+a\geq b \implies a=b+k_{1} \\
+b\geq c\implies b = c+k_{2}
+\end{cases}
+$$
+Substituting b at the first case we arrive at
+$$
+a = c+k_{1}+k_{2} = c + (k_{1}+k_{2})
+$$
+which is the exact definition of
+$$
+a\geq c
+$$
+
+##### Proof 3
 
 
 ### Proposition 2.2.13
