@@ -96,17 +96,7 @@ theorem exercise_2_2_3_antisymmetric {a b : TaoNat} (hab : TaoGe a b) (hba : Tao
 theorem exercise_2_2_3_add_preserves {a b c : TaoNat} : TaoGe a b ↔ TaoGe (a + c) (b + c) := by
   constructor
   ·
-    intro hab
-    unfold TaoGe
-    rcases hab with ⟨k, hk⟩
-    use k
-    conv=>
-      rhs
-      rw[prop_2_2_4]
-    rw [prop_2_2_4]
-
-
-
+    sorry
   · -- Backward direction: (a + c ≥ b + c) → (a ≥ b)
     intro h_ac_bc
     -- Your logic here

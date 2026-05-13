@@ -226,7 +226,31 @@ a\geq c
 $$
 
 ##### Proof 3
+Lets start by unfolding the definition again for both cases
+$$
+\begin{cases}
+a\geq b \implies a = b + k_{1} \\
+b\leq a \implies b = a + k_{2}
+\end{cases}
+$$
+Now we can rewrite $b$ in the first case as
+$$
+a=a+k_{1}+k_{2}
+$$
+But we know from the cancelation law that
+$$
+a = a+(k_{1}+k_{2})\implies a+ 0 = a + (k_{1}+k_{2})\implies 0 = k_{1}+k_{2}
+$$
+Lastly, we also know that
+$$
+k_{1}+k_{2} = 0 \iff k_{1}=0\ ,\ k_{2}=0 
+$$
+so we have 
+$$
+a = b + 0 = b
+$$
 
+##### Proof 4
 
 ### Proposition 2.2.13
 Trichotomy of order for natural numbers.
