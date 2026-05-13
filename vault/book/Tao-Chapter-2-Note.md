@@ -196,6 +196,7 @@ Let $a,b,c$ be natural numbers. Then:
 #### Proof
 This proof is the exercise 2.2.3
 
+
 ### Proposition 2.2.13
 Trichotomy of order for natural numbers.
 Let $a,b$ be natural numbers. Then exactly one of the following statements is true:
