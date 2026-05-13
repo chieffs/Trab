@@ -80,7 +80,15 @@ theorem exercise_2_2_3_antisymmetric {a b : TaoNat} (hab : TaoGe a b) (hba : Tao
     rcases hab with ⟨k,hk⟩
     rcases hba with ⟨m, hm⟩
     rw [hm,exercise_2_2_1] at hk
-
+    have h_cancel : a + zero = a + (m + k) := by
+      rw [lemma_2_2_2]
+      exact hk
+    have h_zero_sum := prop_2_2_6 h_cancel
+    have h_zeros := corollary_2_2_9 h_zero_sum.symm
+    rcases h_zeros with ⟨hm_zero, hk_zero⟩
+    rw [hm_zero] at hm
+    change b = a + zero at hm
+    rw [lemma_2_2_2] at hm
 
 
 /-- (4) Addition preserves (Tao) order on both sides. -/
