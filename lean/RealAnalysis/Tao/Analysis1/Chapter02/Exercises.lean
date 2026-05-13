@@ -18,31 +18,71 @@ open TaoNat (zero succ)
 /-- Tao Proposition 2.2.5 / Exercise 2.2.1: `(a + b) + c = a + (b + c)`. -/
 theorem exercise_2_2_1 (a b c : TaoNat) : (a + b) + c = a + (b + c) := by
   induction a with
-  | zero => rw [zero_add,zero_add]
-    succ =>
+  | zero =>
+    rw [zero_add,zero_add]
+  | succ a ih =>
+    rw [succ_add,succ_add,succ_add,ih]
+
 
 
 /-! ### Exercise 2.2.2 — Tao Lemma 2.2.10 (predecessor) -/
 
 /-- Tao Lemma 2.2.10 / Exercise 2.2.2: every positive `a` has a unique predecessor. -/
-theorem exercise_2_2_2 (a : TaoNat) (ha : TaoPositive a) : ∃! b : TaoNat, succ b = a := by
-  sorry
+theorem exercise_2_2_2 (a : TaoNat) (ha : TaoPositive a) :  ∃! b : TaoNat, succ b = a := by
+  have h_exists : ∃ b : TaoNat, succ b = a := by
+    induction a with
+      |zero =>
+        unfold TaoPositive at ha
+        contradiction
+      | succ ih => use ih
+  rcases h_exists with ⟨b, hb⟩
+  use b
+  constructor
+  exact hb
+  intro c hc
+  rw [<- hb] at hc
+  apply axiom_2_4 at hc
+  exact hc
+
+
+
+
 
 /-! ### Exercise 2.2.3 — Tao Proposition 2.2.12 (properties of order) -/
 
 /-- (1) Order is reflexive. -/
 theorem exercise_2_2_3_reflexive (a : TaoNat) : TaoGe a a := by
-  sorry
+  unfold TaoGe
+  use zero
+  rw [prop_2_2_4,zero_add]
+
 
 /-- (2) Order is transitive. -/
 theorem exercise_2_2_3_transitive {a b c : TaoNat} (hab : TaoGe a b) (hbc : TaoGe b c) :
     TaoGe a c := by
-  sorry
+    unfold TaoGe at hab
+    unfold TaoGe at hbc
+    rcases hab with ⟨k,hk⟩
+    rcases hbc with ⟨m, hm⟩
+    rw [hm,exercise_2_2_1] at hk
+    unfold TaoGe
+    use (m+k)
+
+
+
+
 
 /-- (3) Order is antisymmetric. -/
 theorem exercise_2_2_3_antisymmetric {a b : TaoNat} (hab : TaoGe a b) (hba : TaoGe b a) :
     a = b := by
-  sorry
+    unfold TaoGe at hab
+    unfold TaoGe at hba
+    rcases hab with ⟨k,hk⟩
+    rcases hba with ⟨m, hm⟩
+    rw [hm,exercise_2_2_1] at hk
+
+
+
 
 /-- (4) Addition preserves (Tao) order on both sides. -/
 theorem exercise_2_2_3_add_preserves {a b c : TaoNat} : TaoGe a b ↔ TaoGe (a + c) (b + c) := by
