@@ -348,7 +348,22 @@ Therefore, if $k_{1}=0$ we would have
 $$
 a+0=b \to a=b
 $$
-So, from $a<b$ we can conclude that $a+k_{1}=b$ 
+So, from $a<b$ we can conclude that $a+k_{1}=b$ with $k_{1}\neq 0$, in other words, $k_{1}$ is a positive number.
+Now for the other side. 
+Lets suppose that for a positive natural number $k_{1}$ we have:
+$$
+a+k_{1} = b
+$$
+This would imply that $a\leq b$, by the definition of ordering.
+Then, lets assume that $a=b$.
+$$
+b+k_{1} = b \iff k_{1}=0
+$$
+But we know that $k_{1}$ is different than zero, as its a positive natural number. Therefore it must imply
+$$
+a+k_{1} =b \implies a<b
+$$
+
 ### Proposition 2.2.13
 Trichotomy of order for natural numbers.
 Let $a,b$ be natural numbers. Then exactly one of the following statements is true:
