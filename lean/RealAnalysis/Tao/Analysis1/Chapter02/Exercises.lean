@@ -89,11 +89,28 @@ theorem exercise_2_2_3_antisymmetric {a b : TaoNat} (hab : TaoGe a b) (hba : Tao
     rw [hm_zero] at hm
     change b = a + zero at hm
     rw [lemma_2_2_2] at hm
+    rw [hm]
 
 
 /-- (4) Addition preserves (Tao) order on both sides. -/
 theorem exercise_2_2_3_add_preserves {a b c : TaoNat} : TaoGe a b ↔ TaoGe (a + c) (b + c) := by
-  sorry
+  constructor
+  ·
+    intro hab
+    unfold TaoGe
+    rcases hab with ⟨k, hk⟩
+    use k
+    conv=>
+      rhs
+      rw[prop_2_2_4]
+    rw [prop_2_2_4]
+
+
+
+  · -- Backward direction: (a + c ≥ b + c) → (a ≥ b)
+    intro h_ac_bc
+    -- Your logic here
+    sorry
 
 /-- (5) `a < b` iff `a++ ≤ b` in Tao’s sense (`TaoGe (succ a) b`). -/
 theorem exercise_2_2_3_succ_iff {a b : TaoNat} : TaoGt a b ↔ TaoGe (succ a) b := by
