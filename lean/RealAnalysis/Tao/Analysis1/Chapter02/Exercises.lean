@@ -17,7 +17,10 @@ open TaoNat (zero succ)
 
 /-- Tao Proposition 2.2.5 / Exercise 2.2.1: `(a + b) + c = a + (b + c)`. -/
 theorem exercise_2_2_1 (a b c : TaoNat) : (a + b) + c = a + (b + c) := by
-  sorry
+  induction a with
+  | zero => rw [zero_add,zero_add]
+    succ =>
+
 
 /-! ### Exercise 2.2.2 — Tao Lemma 2.2.10 (predecessor) -/
 
