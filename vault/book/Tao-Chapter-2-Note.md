@@ -64,6 +64,7 @@ $$
 2+1 = 3
 $$
 
+
 ### 2.2.7
 Positive natural numbers.
 A natural number $n$ is said to be positive iff (if and only if) it is not equal to 0.
@@ -174,7 +175,10 @@ Let $a$ be a positive number. than exists exactly one natural number such that $
 This proof is the exercise 2.2.2 and will be on lean's exercise folder.
 Lets assume that exists two different natural numbers $b,c$ such that $b++=a$ and $c++=a$ with $b\neq c$. This would be a direct contradiction of axiom [[#2.4]], so we would need to have $b=c$.
 For the existence of $b$ lets construct it inductively.
-Lets construct a property $P(n):$ if $n\neq 0$ then e
+Lets construct a property $P(n):$ if $n\neq 0$ then exists $b$ such that $b++=n$.
+For the base case $P(0)$ the property is true, as $n\neq 0$ makes is vacuously true.
+Lets assume that this is true for $P(n)$, then we have
+$P(n++)$, $n++\neq 0$ from axiom [[#2.3]], then we have $b++=n++$ if $b=n$. Thus proving the induction.
 
 ## Exercises checklist
 
