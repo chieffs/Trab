@@ -18,8 +18,6 @@ date:
 
 ## Key lemmas / theorems
 
-## Proof ideas (informal)
-
 ## Exercises checklist
 
 | # | statement (short) | Lean status |

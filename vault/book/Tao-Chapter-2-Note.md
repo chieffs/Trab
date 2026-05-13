@@ -152,7 +152,6 @@ $$
 Lastly, by axiom [[#2.4]] we have that if $n++=m++$ then $n=m$.
 so we have that if $(a++)+b=(a++)+c$ we have $(a+b)++=(a+c)++$ and this implies that $a+b=a+c$, by our inductive hypothesis this means that $b=c$, and thus closing the loop and proving the cancelation law.
 
-## Proof ideas (informal)
 
 ## Exercises checklist
 
