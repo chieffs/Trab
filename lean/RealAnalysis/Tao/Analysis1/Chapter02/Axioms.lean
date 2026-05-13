@@ -25,16 +25,19 @@ instance : OfNat TaoNat 0 where ofNat := zero
 
 /-! ## Addition (Tao 2.2.1: recursion on the left summand) -/
 
-protected def add (n m : TaoNat) : TaoNat
+/-- Tao’s `+`: `0 + m = m`, `(n++) + m = (n + m)++`. -/
+protected def add : TaoNat → TaoNat → TaoNat
   | zero, m => m
   | succ n', m => succ (TaoNat.add n' m)
 
 instance : Add TaoNat := ⟨TaoNat.add⟩
 
-@[simp] theorem zero_add (m : TaoNat) : (0 : TaoNat) + m = m :=
+@[simp] theorem zero_add (m : TaoNat) : (0 : TaoNat) + m = m := by
+  show TaoNat.add zero m = m
   rfl
 
-@[simp] theorem succ_add (n m : TaoNat) : succ n + m = succ (n + m) :=
+@[simp] theorem succ_add (n m : TaoNat) : succ n + m = succ (n + m) := by
+  show TaoNat.add (succ n) m = succ (TaoNat.add n m)
   rfl
 
 /-! ## Order and positivity (Tao 2.2.7, 2.2.11) -/
