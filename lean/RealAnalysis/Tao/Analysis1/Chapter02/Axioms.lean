@@ -34,9 +34,18 @@ instance : OfNat TaoNat 0 where ofNat := zero
 
 instance : Add TaoNat := ⟨TaoNat.add⟩
 
-@[simp] theorem zero_add (m : TaoNat) : (0 : TaoNat) + m = m := by
+/-- Numeral `0` is the same as the `zero` constructor (for rewriting). -/
+@[simp] theorem ofNat_zero : (0 : TaoNat) = zero :=
+  rfl
+
+/-- Tao: `0 + m = m` (left addition; use `zero` so `rw` matches `zero + …` goals). -/
+@[simp] theorem zero_add (m : TaoNat) : zero + m = m := by
   show TaoNat.add zero m = m
   rfl
+
+/-- Same fact with numeral `0` on the left (follows by `simp`). -/
+theorem zero_add_ofNat (m : TaoNat) : (0 : TaoNat) + m = m := by
+  simp
 
 @[simp] theorem succ_add (n m : TaoNat) : succ n + m = succ (n + m) := by
   show TaoNat.add (succ n) m = succ (TaoNat.add n m)
