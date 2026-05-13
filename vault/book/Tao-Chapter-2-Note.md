@@ -17,7 +17,8 @@ Definition of the real numbers base on Peano Axioms and the properties emerging 
 ## Axioms
 ### 2.1
 0 is a natural number
-
+### Increment operator (++)
+We assume there is an operation called the "successor". We will denote the successor of any number $n$  as  $n++$
 ### 2.2
 if n is a natural number, then n++ is also a natural number
 
@@ -34,9 +35,6 @@ This axiom is called the principle of mathematical induction.
 Let $P(n)$ be any property pertaining to a natural number $n$. Suppose that $P(0)$ is true, and suppose that whenever $P(n)$ is true, $P(n++)$ is also true. Then $P(n)$ is true for every natural number $n.
 
 ## Key definitions
-### Increment operator (++)
-We define the increment operator ++ as such, assuming that 0 exists, as in axiom [[#2.2]]
-$0++$ is the successor of 0 and $(0++)++$ is the successor of $0++$, so on and so forth, for every natural $n, \, n++$ is the successor of $n$
 
 ### 2.1.3
 Numbers.
@@ -68,6 +66,12 @@ $$
 ### 2.2.7
 Positive natural numbers.
 A natural number $n$ is said to be positive iff (if and only if) it is not equal to 0.
+
+### 2.2.11
+Ordering of the natural numbers.
+Let $n,m$ be natural numbers. We say that $n$ is greater than or equal to $m$, and write $n\geq m$ or $m\leq n$, iff we have $n=m+a$ for a natural number $a$. 
+We say that $n$ is strictly greater than $m$, and write $n>m$ or $m<n$, iff $n\geq m$ and $n\neq m$
+
 ## Key lemmas / theorems
 
 ### Lemma 2.2.2
@@ -180,6 +184,29 @@ For the base case $P(0)$ the property is true, as $n\neq 0$ makes is vacuously t
 Lets assume that this is true for $P(n)$, then we have
 $P(n++)$, $n++\neq 0$ from axiom [[#2.3]], then we have $b++=n++$ if $b=n$. Thus proving the induction.
 
+### Proposition 2.2.12
+Let $a,b,c$ be natural numbers. Then:
+
+1) (Order is reflexive) $a\geq a$  
+2) (Order is transitive) if $a\geq b$ and $b\geq c$ then $a\geq c$
+3) (Order is anti-symmetric) if $a\geq b$ and $b\leq a$ than $a=b$
+4) (Addition preserver order) $a\geq b$ if and only if $a+c\geq b+c$
+5) $a<b$ if and oly if $a++ \leq b$
+6) $a<b$ if and only if $b=a+d$ for some positive number d
+#### Proof
+This proof is the exercise 2.2.3
+
+### Proposition 2.2.13
+Trichotomy of order for natural numbers.
+Let $a,b$ be natural numbers. Then exactly one of the following statements is true:
+$$
+a<b, \, a=b, \, a>b
+$$
+
+#### Proof
+This proof is the exercise 2.2.4
+### Proposition 2.2.13
+Strong 
 ## Exercises checklist
 
 | # | statement (short) | Lean status |
