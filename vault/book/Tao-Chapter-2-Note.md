@@ -161,6 +161,19 @@ We use induction on $b$.
 If $b=0$ then we have $a+0=a$ and $a$ is a positive number.
 Lets say that $a+b$ is positive for an arbitrary $b$, then we have
 $a+b++=(a+b)++$ , using axiom [[#2.3]] we know that if $(a+b)$ is a natural number $(a+b)++\neq 0$, because $0$ is not the successor for any natural number. Thus, we have proved that $a+(b++)$ is in fact positive.
+
+### Corollary 2.2.9
+If a and b are natural numbers such that $a+b=0$ then $a=0$ and $b=0$
+#### Proof
+Lets suppose, for the sake of contradiction, that $a\neq 0$, then we would have 
+$a+b=0$ and $a$ is a positive number, but we just proved that if $a\neq 0$ $a+b$ is positive, therefore $a$ cannot be a positive natural. The same reasoning goes for $b\neq 0$ or $a,b\neq 0$.
+
+### Lemma 2.2.10
+Let $a$ be a positive number. than exists exactly one natural number such that $b++=a$
+#### Proof
+This proof is the exercise 2.2.2 and will be on lean's exercise folder.
+Lets assume that exists two different natural numbers $b,c$ such that $b++=a$ and $c++=a$ with $b\neq c$. 
+
 ## Exercises checklist
 
 | # | statement (short) | Lean status |
