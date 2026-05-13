@@ -191,10 +191,10 @@ Let $a,b,c$ be natural numbers. Then:
 2) (Order is transitive) if $a\geq b$ and $b\geq c$ then $a\geq c$
 3) (Order is anti-symmetric) if $a\geq b$ and $b\leq a$ than $a=b$
 4) (Addition preserver order) $a\geq b$ if and only if $a+c\geq b+c$
-5) $a<b$ if and oly if $a++ \leq b$
+5) $a<b$ if and only if $a++ \leq b$
 6) $a<b$ if and only if $b=a+d$ for some positive number d
-#### Proof
-This proof is the exercise 2.2.3
+#### Proofs
+This proofs are the exercise 2.2.3
 ##### Poof 1
 From the definition of greater than we have, for $a,b,c$ in the naturals
 $$
@@ -279,6 +279,30 @@ Therefore
 $$
 a\geq b\iff a+c\geq b+c
 $$
+
+##### Proof 5
+We want to prove
+$$
+a<b \iff a++ \leq b
+$$
+Lets start by unfolding the definition of $a<b$.
+$$
+a<b \iff a \neq b
+$$
+
+This means that we have $a\neq b$ and
+$$
+a + k_{1} = b
+$$
+This would imply that if $k_{1}=0$ we would have
+$$
+a+0=b \iff a = b
+$$
+Which is not true, therefore we must have some number positive number $k_{1}$ such that $a+k_{1}=b$. (This is the proof of exercise 6, i know. I couldn't figure out how to deal with this without proving the next exercise, so i'll just go with it and use the same reasoning for next case).
+We know that the addition is associative and commutative and that every positive number has exactly one natural predecessor, so we can write $k_{1}=k_{-1}++=k_{-1}+1$. (This $-1$ is just a notation as negative number don't exist in our current universe.). Using this we can reach
+$$
+
+
 
 ### Proposition 2.2.13
 Trichotomy of order for natural numbers.
