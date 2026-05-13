@@ -251,6 +251,28 @@ a = b + 0 = b
 $$
 
 ##### Proof 4
+So, for this we have to prove that
+$$
+a\geq b \iff a+c \geq b+c
+$$
+Lets start with the first implication, $a\geq b \implies a+c \geq b+c$
+
+$$
+\begin{cases}
+a\geq b \iff a = b+ k_{1} \\
+a + c \geq b  + c \iff a+c = b+c+k_{2}
+\end{cases}
+$$
+With $k_{1},k_{2}$ being natural numbers. 
+From the first inequality we can assert that $a=b+k_{1}$, so, substituting that in the second equation we have
+$$
+b+k_{1} + c = b + c + k_{2}
+$$
+Which, by the cancelation law gives us
+$$
+k_{1} = k_{2}
+$$
+
 
 ### Proposition 2.2.13
 Trichotomy of order for natural numbers.
