@@ -173,8 +173,8 @@ Let $a$ be a positive number. than exists exactly one natural number such that $
 #### Proof
 This proof is the exercise 2.2.2 and will be on lean's exercise folder.
 Lets assume that exists two different natural numbers $b,c$ such that $b++=a$ and $c++=a$ with $b\neq c$. This would be a direct contradiction of axiom [[#2.4]], so we would need to have $b=c$.
-Now lets assume that there are no natural number $b$ such that $b++=a$.
-this would mean that $a$ is not the successor of any number, 
+For the existence of $b$ lets construct it inductively.
+Lets construct a property $P(n):$ if $n\neq 0$ then e
 
 ## Exercises checklist
 
