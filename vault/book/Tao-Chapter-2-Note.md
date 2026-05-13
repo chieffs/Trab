@@ -22,7 +22,7 @@ Definition of the real numbers base on Peano Axioms and the properties emerging 
 if n is a natural number, then n++ is also a natural number
 
 ### 2.3
-0 is note the successor of any natural number; *i.e*, 
+0 is not the successor of any natural number; *i.e*, 
 $$
 \forall n \in \mathbb{N},\, n++ \neq 0
 $$
@@ -133,7 +133,7 @@ $$
 Thus we have reached at the same term from both sides and proved that addition is in fact associative
 
 ### Proposition 2.2.6
-Cancelation Law.
+Cancellation Law.
 Let $a,b,c$ be natural numbers such that $a+b=a+c$. Then we have $b=c$
 
 #### Proof
@@ -150,9 +150,17 @@ $$
 (a++)+c=(a+c)++
 $$
 Lastly, by axiom [[#2.4]] we have that if $n++=m++$ then $n=m$.
-so we have that if $(a++)+b=(a++)+c$ we have $(a+b)++=(a+c)++$ and this implies that $a+b=a+c$, by our inductive hypothesis this means that $b=c$, and thus closing the loop and proving the cancelation law.
+so we have that if $(a++)+b=(a++)+c$ we have $(a+b)++=(a+c)++$ and this implies that $a+b=a+c$, by our inductive hypothesis this means that $b=c$, and thus closing the loop and proving the cancellation law.
 
 
+### Proposition 2.2.8
+If $a$ is a positive natural number and b is a natural number than $a+b$ is a positive natural number.
+
+#### Proof
+We use induction on $b$.
+If $b=0$ then we have $a+0=a$ and $a$ is a positive number.
+Lets say that $a+b$ is positive for an arbitrary $b$, then we have
+$a+b++=(a+b)++$ , using axiom [[#2.3]] we know that if $(a+b)$ is a natural number $(a+b)++\neq 0$, because $0$ is not the successor for any natural number. Thus, we have proved that $a+(b++)$ is in fact positive.
 ## Exercises checklist
 
 | # | statement (short) | Lean status |
