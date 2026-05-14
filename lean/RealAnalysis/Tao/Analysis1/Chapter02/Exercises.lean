@@ -152,14 +152,59 @@ theorem exercise_2_2_3_succ_iff {a b : TaoNat} : TaoGt b a ↔ TaoGe b (succ a):
       rw [h_k]
     · -- Second goal: Prove a ≠ b
       intro h_eq
-      sorry
+      rw [h_eq] at h_k
+      conv at h_k=>
+        rhs
+        rw [succ_add,prop_2_2_4,<- succ_add,prop_2_2_4]
+      conv at h_k =>
+        lhs
+        rw [<- lemma_2_2_2 a]
+      apply prop_2_2_6 at h_k
+      contradiction
 
 
 
 /-- (6) `a < b` iff `b = a + d` for some positive `d`. -/
 theorem exercise_2_2_3_lt_iff_add_positive {a b : TaoNat} :
-    TaoGt a b ↔ ∃ d, TaoPositive d ∧ b = a + d := by
-  sorry
+    TaoGt b a ↔ ∃ d, TaoPositive d ∧ b = a + d := by
+    constructor
+    ·
+      intro h_for
+      rw [exercise_2_2_3_succ_iff] at h_for
+      unfold TaoGe at h_for
+      rcases h_for with ⟨k, h_k⟩
+      use k.succ
+      constructor
+      ·
+        unfold TaoPositive
+        intro h_zero
+        contradiction
+      ·
+        conv at h_k =>
+          rhs
+          rw [succ_add,prop_2_2_4,<- succ_add,prop_2_2_4]
+        use h_k
+    ·
+      intro h_back
+      unfold TaoGt
+      constructor
+      ·
+        unfold TaoGe
+        rcases h_back with ⟨d,h_d⟩
+        use d
+        apply h_d.right
+      ·
+        rcases h_back with ⟨ d,pos,eq⟩
+        rw [eq]
+        conv =>
+          rhs
+          rw [<- lemma_2_2_2 a]
+        by_contra
+        apply prop_2_2_6 at this
+        contradiction
+
+
+
 
 /-! ### Exercise 2.2.4 — Tao Proposition 2.2.13 (trichotomy) -/
 
