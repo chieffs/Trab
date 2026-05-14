@@ -95,16 +95,64 @@ theorem exercise_2_2_3_antisymmetric {a b : TaoNat} (hab : TaoGe a b) (hba : Tao
 /-- (4) Addition preserves (Tao) order on both sides. -/
 theorem exercise_2_2_3_add_preserves {a b c : TaoNat} : TaoGe a b ↔ TaoGe (a + c) (b + c) := by
   constructor
-  ·
-    sorry
+  ·-- Forward direction: (a ≥ b) → (a + c ≥ b + c)
+    intro h
+    unfold TaoGe at h
+    rcases h with ⟨ k,h_k ⟩
+    use k
+    rw [h_k,exercise_2_2_1,prop_2_2_4 k c,exercise_2_2_1]
   · -- Backward direction: (a + c ≥ b + c) → (a ≥ b)
     intro h_ac_bc
-    -- Your logic here
-    sorry
+    unfold TaoGe at h_ac_bc ⊢
+    rcases h_ac_bc with ⟨ k,h_k ⟩
+    use k
+    conv at h_k=>
+      rhs
+      rw[exercise_2_2_1, prop_2_2_4 c k , <- exercise_2_2_1, prop_2_2_4]
+    rw [prop_2_2_4] at h_k
+    apply prop_2_2_6 at h_k
+    use h_k
+
 
 /-- (5) `a < b` iff `a++ ≤ b` in Tao’s sense (`TaoGe (succ a) b`). -/
 theorem exercise_2_2_3_succ_iff {a b : TaoNat} : TaoGt a b ↔ TaoGe (succ a) b := by
-  sorry
+  constructor
+  · -- Forward direction
+    intro h
+    rcases h with ⟨h,h_ineq⟩
+    unfold TaoGe at h ⊢
+    rcases h with ⟨k,h_k⟩
+    have h_k_pos : TaoPositive k := by
+      intro h_zero
+      rw [h_zero] at h_k
+      change a = b+zero at h_k
+      rw [lemma_2_2_2] at h_k
+      contradiction
+    use k.succ
+    rw [h_k,prop_2_2_4,<- succ_add,prop_2_2_4] at ⊢
+
+  · -- Backward direction
+    intro h_b
+    unfold TaoGe at h_b
+    rcases h_b with ⟨ k,h_k ⟩
+    unfold TaoGt
+    constructor
+    ·
+      unfold TaoGe
+      use k
+      conv =>
+        rhs
+        rw [<- h_k]
+      have h_a_diff_succ: a + zero !=a.succ + zero := by
+        conv =>
+          rhs
+          rw[succ_add,prop_2_2_4,<- succ_add,prop_2_2_4]
+        apply prop_2_2_6
+
+    ·
+      intro h_ineq
+      sorry
+
 
 /-- (6) `a < b` iff `b = a + d` for some positive `d`. -/
 theorem exercise_2_2_3_lt_iff_add_positive {a b : TaoNat} :
