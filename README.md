@@ -12,7 +12,7 @@ I have a degree in applied maths and am currently conducting research in epidemi
 All the Obsidian notes are my notes and paraphrasing from the book *Analysis* by Terence Tao.
 I use Cursor AI to help maintain the repository and—**only for lemmas and corollaries that the book proves in full (not as exercises)**—sometimes to write the **Lean** formalization. 
 
-**I write all Lean for exercises myself.** **All** lemma text in my notes (including in Obsidian) and **all LaTeX** are mine; Cursor may assist **only** with that book-proved, non-exercise Lean.
+**I write all Lean for exercises myself.** **All** lemma text in my notes (Obsidian) and **all LaTeX** are mine; Cursor may assist **only** with that book-proved, non-exercise Lean.
 Also every error in this project is solely my own fault and not the fault of Cursor or Tao's work.
 
 I hope you have a nice time or learn something from this repository, as I certainly had both a great time and a great deal of learning from this.
